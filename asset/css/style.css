@@ -1,0 +1,677 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+@font-face {
+    font-family: 'audio_wide';
+    src: url('../font/audio_wide/audio_wide.eot');
+    src: url('../font/audio_wide/audio_wided41d.eot?#iefix') format('embedded-opentype'),
+         url('../font/audio_wide/audio_wide.woff') format('woff'),
+         url('../font/audio_wide/audio_wide.ttf') format('truetype'),
+         url('../font/audio_wide/audio_wide.svg#audio_wide') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'avenir_black';
+        src: url('../font/avenir_black/avenir_black.eot');
+        src: url('../font/avenir_black/avenir_blackd41d.eot?#iefix') format('embedded-opentype'),
+            url('../font/avenir_black/avenir_black.woff') format('woff'),
+            url('../font/avenir_black/avenir_black.ttf') format('truetype'),
+            url('../font/avenir_black/avenir_black.svg#avenir_black') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'neuton';
+        src: url('../font/neuton/neuton.eot');
+        src: url('../font/neuton/neutond41d.eot?#iefix') format('embedded-opentype'),
+            url('../font/neuton/neuton.woff') format('woff'),
+            url('../font/neuton/neuton.ttf') format('truetype'),
+            url('../font/neuton/neuton.svg#neuton') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Playfair_Display';
+        src: url('../font/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'PT_Serif';
+        src: url('../font/PT_Serif/PTSerif-Regular.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    * {box-sizing: border-box;}
+
+    body {
+    background-color: rgb(26, 26, 26);
+    font-family: 'Open Sans',arial, verdana, sans-serif;
+    margin: 0 0px;
+    padding: 0;
+    color:#fff;
+    font-size:12px;
+    line-height:20px;
+    }
+
+    .container{
+        max-width:690px;
+        margin: auto;
+        padding: 0px;
+    }
+
+    .main{
+        background-color: rgb(171, 134, 79);
+        margin-top: 0px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: solid 3px rgb(242, 236, 165);
+        padding: 10px;
+    }
+
+    section{
+        margin: 130px auto 20px;
+    }
+
+    .logo{
+        display: block;
+        margin: 30px auto 10px;
+    }
+
+    .navigasi{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 15px 0 15px 0;
+        transition: 0.3s ease-out
+    }
+
+    ul li{
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .button {
+      min-width: 170px;
+      min-height: 45px;
+      font-family: 'audio_wide';
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      font-weight: 500;
+      color: #313133;
+      background: #4FD1C5;
+      background: linear-gradient(90deg, rgb(245, 240, 169) 0%, rgb(228, 216, 148) 100%);
+      border: none;
+      border-radius: 5px;
+      box-shadow: 12px 12px 24px rgba(222, 207, 140, 0.5);
+      transition: all 0.3s ease-in-out 0s;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      padding: 0px;
+      display: block;
+      line-height: 43px;
+      text-align: center;
+    }
+
+    a.button::before {
+        content: '';
+        border-radius: 5px;
+        min-width: calc(170px + 7px);
+        min-height: calc(45px + 7px);
+        border: 2px solid #6F4C18;
+        box-shadow: 0 0 60px rgba(181, 148, 91, 0.58);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all .3s ease-in-out 0s;
+    }
+
+    .button:hover, .button:focus {
+      color: #313133;
+      transform: translateY(-6px);
+    }
+
+    a.button:hover::before, a.button:focus::before {
+      opacity: 1;
+    }
+
+    a.button::after {
+      content: '';
+      width: 300px; 
+      height: 30px;
+      border-radius: 100%;
+      border: 4px solid #F0EAA3;
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: ring 1.5s infinite;
+    }
+
+    a.button:hover::after, a.button:focus::after {
+      animation: none;
+      display: none;
+    }
+
+    @keyframes ring {
+      0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+      100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+      }
+    }
+
+    #first {
+        padding: 0px 20px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    /** Stiky **/
+    
+    #navbar {
+      overflow: hidden;
+      background: linear-gradient(#684511, #ab864f);
+      padding: 5px 10px;
+      transition: 0.4s;
+      position: fixed;
+      width: 100%; 
+      top: 0;
+      z-index: 99;
+      border-radius: 0px;
+      border-right: 3px solid rgb(242, 236, 165);
+      border-left: 3px solid rgb(242, 236, 165);
+    }
+
+    #navbar .box-img {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px; 
+      line-height: 25px;
+      border-radius: 4px;
+    }
+
+    #navbar #logo {
+      font-size: 35px;
+      font-weight: bold;
+      transition: 0.4s;
+      margin: 0 0 0 30px;
+    }
+
+    #navbar a:hover {
+      background-color: transparent;
+      color: black;
+    }
+
+    #navbar a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    #navbar-right {
+      float: right;
+      margin-top: 5%;
+    }
+
+    .box-img {
+        width: 192px;
+    }
+
+
+    /**    **/
+
+    .icon-login{
+        float:left;
+        background:url(../img/Wargacasino.html\ Login.png) no-repeat;
+        width:43px;
+        height:30px;
+        margin-top: 5px;
+    }
+
+    .icon-reg{
+        float:left;
+        background: url(../img/Wargacasino.html\ Daftar.png) no-repeat;
+        width:43px;
+        height:30px;
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+    .login{
+        line-height: 35px;
+    }
+    .daftar{
+        line-height: 35px;
+    }
+
+    .link{
+        background:#000;
+        padding:5px;
+        text-align:center;
+        border-radius:5px;
+        margin:5px 0;
+        border: 2px solid rgb(242, 236, 165);
+    }
+
+    .linkresmi{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size:16px;
+        color:#fff;
+        font-weight: 600;
+    }
+
+    .linkresmi a{
+        color: rgb(231, 220, 152);
+        font-weight: bold;
+        font-size: 17px;
+    }
+
+    .slides{
+        border-radius: 10px;
+        margin:auto;
+        max-width:100%;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid rgb(255, 255, 255);
+        clear:both;
+    }
+
+    .video{
+        background:#000;
+        text-align:center;
+        border-radius:15px;
+        margin-top: 5px;
+        border: 1px solid red;
+    }
+    .bc{
+        font-size: 13pt;
+        margin-bottom:10px;
+        font-weight: 700;
+        text-decoration-line: underline;
+        padding-top: 7px;
+    }
+
+    .gayavideo{
+        max-width: 100%;
+        border-radius:0 0 15px 15px;
+        margin-bottom: -6px;
+        border-top: 2px dotted red;
+    }
+
+    article{
+        margin: 10px auto 0;
+        text-align: justify;
+    }
+
+    article a{
+        font-weight: 700;
+    }
+
+    article p{
+        margin-bottom: 10px;
+        font-family: 'Playfair_Display';
+    }
+
+    aside{
+        margin: 10px auto 0;
+        text-align: justify;
+    }
+
+    aside p{
+        margin-bottom: 10px;
+    }
+
+    h1, h2, h3, h4, h5{
+        font-family: 'PT_Serif';
+        color:rgb(250, 184, 2);
+        font-size:18px;
+        margin:10px 0;
+        font-weight:900;
+        text-align: center;
+    }
+
+    a{
+        color:#fff;
+        text-decoration: none;
+    }
+
+    footer{
+        display: block;
+        font-size:12px;
+        color: #fff;
+        margin: 10px auto 5px;
+        text-align: center;
+    }
+
+    footer a{
+        font-weight: 700;
+    }
+    
+    .right-element {
+        float: right;
+    }
+    
+    .gambarchat{
+        margin-left:5px;
+        width: 20px;
+        position: absolute;
+    }
+    .tombolwa{
+        box-sizing: border-box;
+        background-color: black;
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: white;
+        font-size: 11pt;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        width: 100%;
+        max-width: 160px;
+        padding: 3px 5px;
+        margin: auto;
+        transition: 0.2s ease-in;
+    }
+
+    .tombolwa:hover {
+        background: transparent;
+    }
+
+    .tombolwa:hover .nomor {
+        color: black;
+    }
+
+    .tombollive{
+        box-sizing: border-box;
+        background-color: black;
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: white;
+        font-size: 11pt;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        width: 100%;
+        max-width: 160px;
+        padding: 3px 5px;
+        margin: auto;
+        transition: 0.2s ease-in;
+    }
+
+    .tombollive:hover {
+        background: transparent;
+    }
+
+    .tombollive:hover .nomor {
+        color: black;
+    }
+
+    .tomboldownload{
+        box-sizing: border-box;
+        background-color: black;
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: white;
+        font-size: 11pt;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        width: 100%;
+        max-width: 160px;
+        padding: 3px 5px;
+        margin: auto;
+        transition: 0.2s ease-in;
+    }
+
+    .tomboldownload:hover {
+        background: transparent;
+    }
+
+    .tomboldownload:hover .nomor {
+        color: black;
+    }
+    
+    .nomor{
+        color: rgb(231, 220, 152);
+    }
+    @media screen and (max-width:682px){
+        .tombolwa, .tombollive, .tomboldownload, .tomboladd{
+            max-width: 145px;
+            margin: 3px;
+            font-size: 10pt;
+        }
+        .via{
+            max-width: 400px;
+            max-height: 70px;
+        }
+        .button{
+            margin: 15px 10px 0;
+        }
+        .sticky {
+          position: fixed;
+          top: 0;
+          padding: 0 5px;
+        }
+        .box-img {
+            width: 100px;
+        }
+        #navbar #logo {
+            margin: 0px;
+        }
+        #first {
+            padding: 0px 0px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .button {
+          min-width: 100px;
+          min-height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+        }
+        a.button::before {
+            min-width: calc(100px + 7px);
+            min-height: calc(30px + 7px);
+        }
+        #navbar .box-img {
+            padding: 5px;
+        }
+        section{
+            margin: 70px auto 20px;
+        }
+        #navbar-right {
+          float: right;
+          margin-top: 0%;
+        }
+        }
+    @media screen and (max-width:460px){
+        .tombolwa, .tombollive, .tomboldownload, .tomboladd{
+            max-width: 150px;
+            margin: 3px;
+            font-size: 10pt;
+        }
+        .via{
+            max-width: 350px;
+            max-height: 65px;
+        }
+        .button{
+            margin: 15px 5px 0;
+        }
+        .sticky {
+          position: fixed;
+          top: 0;
+          padding: 0 5px;
+        }
+        .header {
+            width: auto;
+        }
+        .navigasi {
+            padding: 0 0 15px 0;
+        }
+        .box-img {
+            width: 100px;
+        }
+        #navbar #logo {
+            margin: 0px;
+        }
+        #first {
+            padding: 0px 0px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .button {
+          min-width: 100px;
+          min-height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+        }
+        a.button::before {
+            min-width: calc(100px + 7px);
+            min-height: calc(30px + 7px);
+        }
+        #navbar .box-img {
+            padding: 5px;
+        }
+        section{
+            margin: 70px auto 20px;
+        }
+        #navbar-right {
+          float: right;
+          margin-top: 0%;
+        }
+        }
+        @media screen and (max-width:375px){
+        .via{
+            max-width: 300px;
+            max-height: 55px;
+        }
+        .button{
+            margin: 15px 5px 0;
+        }
+        .sticky {
+          position: fixed;
+          top: 0;
+          padding: 0 5px;
+        }
+        .header {
+            width: auto;
+        }
+        .navigasi {
+            padding: 0 0 15px 0;
+        }
+        .box-img {
+            width: 100px;
+        }
+        #navbar #logo {
+            margin: 0px;
+        }
+        #first {
+            padding: 0px 0px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .button {
+          min-width: 100px;
+          min-height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+        }
+        a.button::before {
+            min-width: calc(100px + 7px);
+            min-height: calc(30px + 7px);
+        }
+        #navbar .box-img {
+            padding: 5px;
+        }
+        section{
+            margin: 70px auto 20px;
+        }
+        #navbar-right {
+          float: right;
+          margin-top: 0%;
+        }
+        }
+        @media screen and (max-width:348px){
+        .via{
+            max-width: 270px;
+            max-height: 55px;
+        }
+        .button{
+            margin: 15px 0px 0;
+        }
+        .sticky {
+          position: fixed;
+          top: 0;
+          padding: 0 5px;
+        }
+        .header {
+            width: auto;
+        }
+        .tombolwa, .tombollive, .tomboldownload, .tomboladd{
+            max-width: 300px;
+            margin: 3px;
+            font-size: 10pt;
+        }
+        .linkresmi{
+            font-size: 14px;
+        }
+        .navigasi {
+            padding: 0 0 15px 0;
+        }
+        #navbar #logo {
+            width: 100px;
+        }
+        .box-img {
+            width: 100px;
+            text-align: center;
+        }
+        #navbar-right {
+          float: right;
+          margin-top: 0%;
+        }
+        }
